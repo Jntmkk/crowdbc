@@ -1,0 +1,7 @@
+web3j:
+  client-address: https://rinkeby.infura.io/v3/e4fd1742a2d4435587f43abebeb48485
+  http-timeout-seconds: 300
+  admin-client: true
+spring:
+  thymeleaf:
+    cache: false
