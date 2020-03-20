@@ -6,6 +6,7 @@ import cn.edu.jnu.crowdbc.domain.vo.EvaluateSolutionResultVO;
 import cn.edu.jnu.crowdbc.domain.vo.TaskInfoVO;
 import cn.edu.jnu.crowdbc.domain.vo.TaskSolutionVO;
 import cn.edu.jnu.crowdbc.domain.vo.UserInfoVO;
+import org.web3j.abi.datatypes.Address;
 import org.web3j.tx.Contract;
 
 /**
@@ -20,9 +21,9 @@ public interface CrowdBCService {
     /**
      * @return 获取 web3j 版本
      */
-    ResponseBody<?> getWeb3jVersion();
+    ResponseBody<?> getWeb3jVersionS();
 
-    ResponseBody<?> getReputationAvg();
+    ResponseBody<?> getReputationAvgS();
 
     /**
      * 检测钱包地址和用户名是否已注册
@@ -31,56 +32,56 @@ public interface CrowdBCService {
      * @param Name    用户名
      * @return
      */
-    ResponseBody<?> isRegistered(String address, String Name);
+    ResponseBody<?> isRegisteredS(Address address, String Name);
 
-    ResponseBody<?> register(String address, String Name);
+    ResponseBody<?> registerS(Address address, String Name);
 
-    ResponseBody<?> getUserInfo(String address);
+    ResponseBody<?> getUserInfoS(Address address);
 
-    ResponseBody<?> updateUserPassWord(String address, String passWord);
+    ResponseBody<?> updateUserPassWordS(Address address, String passWord);
 
-    ResponseBody<?> updateUserInfo(UserInfoVO userInfoVO);
+    ResponseBody<?> updateUserInfoS(UserInfoVO userInfoVO);
 
-    ResponseBody<?> getUserReceivedTask(String address);
+    ResponseBody<?> getUserReceivedTaskS(Address address);
 
-    ResponseBody<?> getUserProcessingTask(String address);
+    ResponseBody<?> getUserProcessingTaskS(Address address);
 
-    ResponseBody<?> getUserSubmittedTask(String address);
+    ResponseBody<?> getUserSubmittedTaskS(Address address);
 
-    ResponseBody<?> getUserEvaluatingTask(String address);
+    ResponseBody<?> getUserEvaluatingTaskS(Address address);
 
-    ResponseBody<?> getUserFinishedTask(String address);
+    ResponseBody<?> getUserFinishedTaskS(Address address);
 
-    ResponseBody<?> getAllTask();
+    ResponseBody<?> getAllTaskS();
 
     /**
      * 还未被接收的任务
      *
      * @return
      */
-    ResponseBody<?> getAllUnreceivedTask();
+    ResponseBody<?> getAllUnreceivedTaskS();
 
-    ResponseBody<?> receiveTask(String taskIdentity);
+    ResponseBody<?> receiveTaskS(String taskIdentity);
 
-    ResponseBody<?> postTask(TaskInfoVO taskInfoVO);
+    ResponseBody<?> postTaskS(TaskInfoVO taskInfoVO);
 
-    ResponseBody<?> getTaskInfo(String address);
+    ResponseBody<?> getTaskInfoS(Address address);
 
-    ResponseBody<?> getGMAddress();
+    ResponseBody<?> getGMAddressS();
 
-    ResponseBody<?> isReceived(String taskIdentity);
+    ResponseBody<?> isReceivedS(String taskIdentity);
 
-    ResponseBody<?> getWorkersList(String taskIdentity);
+    ResponseBody<?> getWorkersListS(String taskIdentity);
 
-    ResponseBody<?> submitSolution(TaskSolutionVO taskSolutionVO);
+    ResponseBody<?> submitSolutionS(TaskSolutionVO taskSolutionVO);
 
-    ResponseBody<?> evaluateSolution(EvaluateSolutionResultVO solutionResultVO);
+    ResponseBody<?> evaluateSolutionS(EvaluateSolutionResultVO solutionResultVO);
 
-    ResponseBody<?> getAllSolution(String taskIdentity);
+    ResponseBody<?> getAllSolutionS(String taskIdentity);
 
-    ResponseBody<?> deployContract(Contract contract);
+    ResponseBody<?> deployContractS(Contract contract);
 
-    ResponseBody<?> queryContract(String address);
+    ResponseBody<?> queryContractS(Address address);
 
-    ResponseBody<?> transfer(String from, String to, String amount);
+    ResponseBody<?> transferS(String from, String to, String amount);
 }
